@@ -109,8 +109,12 @@
     }
 
     build.padding = function (options) {
-      if (!arguments.length) return build.padding
-      window.VisPack.setProps(build.padding, options)
+      if (!arguments.length) return padding
+      for (var k in options) {
+        if (padding.hasOwnProperty(k)) {
+          padding[k] = options[k]
+        }
+      }
       return build
     }
 
